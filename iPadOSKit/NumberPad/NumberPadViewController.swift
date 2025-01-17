@@ -57,7 +57,7 @@ fileprivate extension NumberPadViewController {
         }
         private func setupViewLayouts() {
             NSLayoutConstraint.activate([
-                numberPad.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 400.0),
+                numberPad.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 200.0),
                 numberPad.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
                 numberPad.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20.0)
             ])
