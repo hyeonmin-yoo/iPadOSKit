@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NumberPad: UIInputView {
     static let height: CGFloat = 350.0
@@ -147,11 +148,23 @@ extension NumberPad {
 extension NumberPad: NumberPadButtonDelegate {
     func numberPadDidTap(_ button: NumberPadButton) {
         guard let textField else { return }
+        hapticFeedback()
+        playSound()
+        
         switch button.kind {
         case .delete: _ = textField.text?.popLast()
         case .deleteAll: textField.text = ""
         case .number: textField.text = (textField.text ?? "") + (button.titleLabel?.text ?? "") }
         textField.sendActions(for: .editingChanged)
+    }
+    
+    func hapticFeedback() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+    }
+    
+    func playSound() {
+        AudioServicesPlaySystemSound(1104)
     }
 }
 
