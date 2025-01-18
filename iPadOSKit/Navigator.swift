@@ -10,11 +10,13 @@ import UIKit
 enum ViewControllerType {
     case main
     case numberPad
+    case signablePdf
     
     var viewController: UIViewController {
         switch self {
         case .main: MainViewController()
         case .numberPad: NumberPadViewController()
+        case .signablePdf: SignablePDFViewController()
         }
     }
     
@@ -22,6 +24,7 @@ enum ViewControllerType {
         switch self {
         case .main: MainViewController.self
         case .numberPad: NumberPadViewController.self
+        case .signablePdf: SignablePDFViewController.self
         }
     }
 }
