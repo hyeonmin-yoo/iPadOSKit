@@ -81,6 +81,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: Navigator.push(.numberPad)
+        case 1: Navigator.push(.signablePdf)
         default: return
         }
     }
