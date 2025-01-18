@@ -9,16 +9,19 @@ import UIKit
 
 enum ViewControllerType {
     case main
+    case numberPad
     
     var viewController: UIViewController {
         switch self {
         case .main: MainViewController()
+        case .numberPad: NumberPadViewController()
         }
     }
     
     var type: UIViewController.Type {
         switch self {
         case .main: MainViewController.self
+        case .numberPad: NumberPadViewController.self
         }
     }
 }

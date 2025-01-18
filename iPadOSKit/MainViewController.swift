@@ -79,5 +79,9 @@ extension MainViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: Navigator.push(.numberPad)
+        default: return
+        }
     }
 }
